@@ -51,11 +51,27 @@ countries2.forEach((country) => {
     newDiv.appendChild(newH4)
     newDiv.appendChild(newImg)
     body.appendChild(newDiv)
+    // 1.6 Basandote en el ejercicio anterior. Crea un botón para cada uno de los 
+    // elementos de las listas que elimine ese mismo elemento del html.
+    let btnDelete = document.createElement("button")
+    btnDelete.textContent = "Borrame!"
+    newDiv.appendChild(btnDelete)
+    btnDelete.addEventListener("click", () => {
+      newDiv.remove()
+    })
 })
 
 // 1.5 Basandote en el ejercicio anterior. Crea un botón que elimine el último 
 // elemento de la lista.
 
-// 1.6 Basandote en el ejercicio anterior. Crea un botón para cada uno de los 
-// elementos de las listas que elimine ese mismo elemento del html.
+let listadoDiv = document.querySelectorAll("div")
+
+let btnEliminar = document.createElement("button")
+btnEliminar.innerText = "Eliminar ult."
+btnEliminar.addEventListener("click", () => {
+    listadoDiv[listadoDiv.length - 1].remove()
+})
+body.appendChild(btnEliminar)
+
+
 }
